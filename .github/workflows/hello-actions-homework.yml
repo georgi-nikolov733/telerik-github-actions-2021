@@ -1,5 +1,7 @@
 name: actions-homework
-on: [pull_request]
+on:
+  pull_request: 
+    types: [ assigned, opened, synchronize, reopened ]
 jobs: 
   echo-test:
     runs-on: ubuntu-latest
