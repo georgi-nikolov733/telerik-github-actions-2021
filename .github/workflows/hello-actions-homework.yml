@@ -6,5 +6,5 @@ jobs:
   echo-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: echo "This is our first Github Workflow!"
+    - uses: actions/checkout@v2
+    - run: echo "This is our first Github Workflow!"
