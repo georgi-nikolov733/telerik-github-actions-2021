@@ -4,8 +4,23 @@ on:
     paths:
       - "README.md"
 jobs:
-  echo-test:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: echo "This is our first Github Workflow!"
+    - run: echo "this has been triggered ${{ github.event_name }} event"
+    - run: echo "This job is running on ${{ runner.os }} server hosted on github!"
+    - name: Check out repository code
+      uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with: 
+        python-version: 3.9
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pylint
+    - name: Lint with pylint
+      run: |
+        python lint_test.py & 
+        python lint_test.py &
+        
