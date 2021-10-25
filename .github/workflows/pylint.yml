@@ -16,6 +16,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pylint
+        pip install pycodestyle
     - name: Lint with pylint
       run: |
         python lint_test.py
@@ -26,11 +27,7 @@ jobs:
       run: |
         python3 -m doctest factorial.py
     - name: Build container
-      run: |
-        echo "Building a container image..."
-        sleep 30
-    - name: Deploy to Cluster
-      run: |
-        echo "Deploying to cluster..."
-    - run: echo "This job's status is ${{ job.status }}."
-        
+      run: echo "Building container iamge"
+    - name: Deploy
+      run: echo "Deploying to cluster"
+    
