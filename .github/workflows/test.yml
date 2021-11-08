@@ -39,13 +39,13 @@ jobs:
     needs: pre-build
     runs-on: ${{ matrix.os }}
     strategy:
-      matrix:
-        os: [ubuntu-latest]
-        python-version: [ 2.7 , 3.8 , 3.9 ]
-  #      python-version: ['3.9']        
+       matrix:
+        os: [ ubuntu-latest ]
+        python-version: ['2.7', '3.8', '3.9']
+#         python-version: ['3.9']        
         exclude:
           - os: macos-latest
-            python-version: 3.8
+            python-version: '3.8'
     steps:
     - name: Check out repository code
       uses: actions/checkout@v2
